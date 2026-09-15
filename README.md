@@ -8,6 +8,9 @@ A nivel general todos los proyectos son soluciones se han implementado utilizand
 ---
 
 ## 📑 Índice de proyectos
+### 🔹 EjemploRestApiClase:
+- **Descripción:** Proyecto ejemplo de RestAPI de Visual Studio 20226. Le incluimos el SWAGGER  
+- **Conceptos clave:** Demo, Visual Studio 2026, APIREST, OpenApi, Swagger
 ### 🔹 4VGymAPI:
 - **Descripción:** Proyecto ejemplo de comienzo de trabajo en REST API y datos en memoria  
 - **Conceptos clave:** APIREST, LinQ, Modelos, Controladores, Repositorio arquitectura, css
