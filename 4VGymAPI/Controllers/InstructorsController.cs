@@ -25,11 +25,11 @@ namespace _4VGymAPI.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<Instructor>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
-        public ActionResult<IEnumerable<Instructor>> FindInstructors()
+        public ActionResult<IEnumerable<Instructor>> FindInstructors([FromQuery(Name = "first_initial")] string? firstInitial)
         {
             try
             {
-                IEnumerable<Instructor> instructors = _repository.GetAll();
+                IEnumerable<Instructor> instructors = _repository.GetByFirstInitial(firstInitial);
 
                 return Ok(instructors);
             }
@@ -38,5 +38,6 @@ namespace _4VGymAPI.Controllers
                 return BadRequest(new ErrorResponse(1, "Any problem in the Server"));
             }
         }
+
     }
 }

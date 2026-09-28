@@ -27,5 +27,28 @@ namespace _4VGymAPI.Repositories
         {
             return _instructors.Values;
         }
+
+
+        // Método para obtener todos los instructores
+        public IEnumerable<Instructor> GetByFirstInitial(string? firstInitial = null)
+        {
+            IEnumerable<Instructor> _allInstructors = _instructors.Values;
+
+            // Si se recibe la inicial, aplicamos el filtro sobre la colección
+            if (!string.IsNullOrWhiteSpace(firstInitial))
+            {
+                IEnumerable<Instructor> filteredInstructors =
+                    _allInstructors
+                        .Where(instructor =>
+                                     !string.IsNullOrEmpty(instructor.Name) &&
+                                     instructor.Name.StartsWith(firstInitial, StringComparison.OrdinalIgnoreCase)
+                        );
+
+                return filteredInstructors;
+            }
+
+            return _allInstructors;
+        }
+
     }
 }
