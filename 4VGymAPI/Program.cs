@@ -11,6 +11,7 @@ builder.Services.AddOpenApi();
 
 // Inyección de la clase de repositorio concreta (Singleton para mantener los datos en memoria)
 builder.Services.AddSingleton<InMemoryActivityTypeRepository>();
+builder.Services.AddSingleton<InMemoryInstructorRepository>();
 
 // Contruir la aplicacion
 var app = builder.Build();
