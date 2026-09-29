@@ -105,7 +105,7 @@ namespace _02LinqPersonas.Models
                 new Provincia("Z", "Zaragoza")
             };
 
-            return provincias.ToDictionary(p => p.Id, p => p);
+            return provincias.ToDictionary(p => p.Id, p => p,StringComparer.OrdinalIgnoreCase);
         }
     }
 }
