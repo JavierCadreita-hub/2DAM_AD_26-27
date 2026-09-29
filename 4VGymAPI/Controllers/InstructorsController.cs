@@ -39,5 +39,32 @@ namespace _4VGymAPI.Controllers
             }
         }
 
+
+        // GET: api/instructors/2
+        [HttpGet("{id:int}")]
+        [ProducesResponseType(typeof(Instructor), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
+        public ActionResult<Instructor> GetInstructorById([FromRoute] int id)
+        {
+            try
+            {
+                Instructor? instructor = _repository.GetById(id);
+                //Instructor? instructor = _repository.GetByIdLinq(id)
+                if (instructor != null)
+                {
+                    return Ok(instructor);
+                }
+                return NotFound(new ErrorResponse(2, $"No existe el instructor {id}"));
+
+            }
+            catch (Exception)
+            {
+
+                return BadRequest(new ErrorResponse(1, "Ocurrió un error en el servidor al procesar la solicitud."));
+            }
+
+        }
+
     }
 }

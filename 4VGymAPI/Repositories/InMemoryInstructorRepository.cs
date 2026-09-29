@@ -50,5 +50,18 @@ namespace _4VGymAPI.Repositories
             return _allInstructors;
         }
 
+        public Instructor? GetById(int id)
+        {
+            _instructors.TryGetValue(id, out Instructor? instructor);
+            return instructor;
+        }
+
+        // TODO: No es necesario, lo podemos quitar, pero es para ver alternativas en LinQ
+        internal Instructor? GetByIdLinq(int id)
+        {
+            return _instructors.Values
+                .SingleOrDefault(i => i.Id == id); // FistOrDefault (Where devolvería una colección y queremos solo 1 posible elemento)
+        }
+
     }
 }
