@@ -4,7 +4,11 @@ namespace _02LinqPersonas.Repositories
 {
     public class PersonasEnRepositorio
     {
-      private List<Persona> personas = new List<Persona>{
+        public IEnumerable<Persona> GetPersonasPorComienzoNombre(string? comienzo)
+        {
+            return null;
+        }
+        private List<Persona> personas = new List<Persona>{
                 new Persona ("Pri", "Primera50Navarra", new DateTime(DateTime.Today.Year - 50,4,3),"Iruñea", "NA", new List<String> {"948121212", "676676676" }),
                 new Persona("Seg", "Segunda40Nav", new DateTime( DateTime.Today.Year - 40, 10,3), "Barañain", "NA", new List<string>()),
                 new Persona("Ter", "Tercera20Gi", new DateTime( DateTime.Today.Year - 21, 12, 29),  "Donostia", "SS", new List<String> {"943121415"}),
