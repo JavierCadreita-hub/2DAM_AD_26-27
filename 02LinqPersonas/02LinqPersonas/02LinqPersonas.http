@@ -1,0 +1,6 @@
+@_02LinqPersonas_HostAddress = http://localhost:5221
+
+GET {{_02LinqPersonas_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
