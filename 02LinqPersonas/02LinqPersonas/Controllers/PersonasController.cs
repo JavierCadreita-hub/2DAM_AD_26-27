@@ -10,6 +10,14 @@ namespace _02LinqPersonas.Controllers
     {
         private PersonasEnRepositorio _personas = new PersonasEnRepositorio();
 
+
+        [HttpGet]
+     public ActionResult<IEnumerable<Persona>> getPersonas()
+        {
+            return Ok(_personas.getPersonas());
+          
+        }
+
         [HttpGet("personasComienzoNombre")]
         public ActionResult<IEnumerable<Persona>> GetPersonasPorComienzoNombre([FromQuery] string? texto)
         {

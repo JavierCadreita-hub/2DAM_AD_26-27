@@ -21,7 +21,7 @@ namespace _02LinqPersonas.Models
         /// </summary>
         public IEnumerable<Provincia> GetProvincias()
         {
-            return null;
+            return provincias.Values;
         }
 
         /// <summary>
@@ -30,7 +30,8 @@ namespace _02LinqPersonas.Models
         /// <param name="nombre">Texto inicial para filtrar el nombre de la provincia.</param>
         public IEnumerable<Provincia> GetProvinciasComienzanPor(string? nombre)
         {
-           return null;
+           
+            return provincias.Values.Where(p => p.Nombre.StartsWith(nombre));
         }
 
         /// <summary>
@@ -40,8 +41,8 @@ namespace _02LinqPersonas.Models
         /// <returns>La provincia encontrada o null si no existe.</returns>
         public Provincia? GetProvinciaPorId(string id)
         {
-            
-                return null;
+
+           return provincias.Values.FirstOrDefault(provin => provin.Id.Equals(id));
             
         }
         /// <summary>

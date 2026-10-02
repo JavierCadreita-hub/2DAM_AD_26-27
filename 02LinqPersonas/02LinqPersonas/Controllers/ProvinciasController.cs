@@ -31,7 +31,7 @@ namespace _02LinqPersonas.Controllers
         /// <param name="id">Identificador de la provincia (matrícula provincial).</param>
         /// <returns>La provincia solicitada o un estado 404 Not Found si no existe.</returns>
         [HttpGet("{id}")] // en este caso (parmáetro de ruta) acepta localhost:puerto/api/provincias/NA. El dato NA forma parte de la ruta
-        public ActionResult<Provincia> GetProvinciaPorId(string id)
+        public ActionResult<Provincia> GetProvinciaPorId([FromRoute] string id)
         {
             Provincia? provincia = _provincias.GetProvinciaPorId(id);
 
