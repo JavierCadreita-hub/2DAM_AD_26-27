@@ -11,7 +11,7 @@ namespace _4VGymAPI.Models
         public string Name { get; set; } = string.Empty;
 
         [JsonPropertyName("number-monitors")]
-        public int NumberMonitors { get; set; }
+        public int NumberMonitors { get; set; } = 1;
 
         public ActivityType()
         {
