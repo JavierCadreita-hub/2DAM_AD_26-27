@@ -55,3 +55,53 @@ Content-Type: application/json
   "name": "Actividad1"
 }
 
+### Para hacer un POST de Instructors happy path
+POST {{_4VGymAPI_HostAddress}}/instructors
+Content-Type: application/json
+
+{
+  "name": "David Noyaa",
+  "phone": "666554433",
+  "email": "david_noya2@gmail.com",
+  "photo_url": "http://www.davidnoya.com/david_noya.jpg"
+}
+
+### Para hacer un POST de Instructors Telefono incorrecto
+POST {{_4VGymAPI_HostAddress}}/instructors
+Content-Type: application/json
+
+{
+  "name": "David Noya",
+  "phone": "adsadsa",
+  "email": "david_noya@cuatrovientos.org",
+  "photo_url": "http://www.davidnoya.com/david_noya.jpg"
+}
+
+
+### Para hacer un POST de Instructors Email Incorrecto
+POST {{_4VGymAPI_HostAddress}}/instructors
+Content-Type: application/json
+
+{
+  "name": "David Noya",
+  "phone": "666554433",
+  "email": "david_noya@cuatrovientos.org",
+  "photo_url": "http://www.davidnoya.com/david_noya.jpg"
+}
+
+### Para hacer un POST de Instructors Telefono obligatorio
+POST {{_4VGymAPI_HostAddress}}/instructors
+Content-Type: application/json
+
+{
+  "name": "David Noya",
+  "email": "david_noya@cuatrovientos.org",
+  "photo_url": "http://www.davidnoya.com/david_noya.jpg"
+}
+
+### Para hacer un POST de Instructors nulo
+POST {{_4VGymAPI_HostAddress}}/instructors
+Content-Type: application/json
+
+{
+}
