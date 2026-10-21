@@ -52,6 +52,15 @@ namespace _4VGymAPI.Repositories
                             string.Equals(at.Name, name, StringComparison.OrdinalIgnoreCase));
         }
 
+        public ActivityType? GetById(int? id)
+        {
+            if (id == null)
+                return null;
+
+            return _activityTypes
+                .SingleOrDefault(i => i.Id == id); // FistOrDefault mejor que Where
+        }
+
 
     }
 

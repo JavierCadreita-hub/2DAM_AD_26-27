@@ -1,10 +1,37 @@
 
+using _4VGymAPI.Models;
 using _4VGymAPI.Repositories;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Añadir los controladores
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .ConfigureApiBehaviorOptions(options =>
+    {
+        options.InvalidModelStateResponseFactory = context =>
+        {
+            var errorList = context.ModelState
+                .Where(e => e.Value != null && e.Value.Errors.Count > 0)
+                .SelectMany(entry => entry.Value!.Errors.Select(error =>
+                {
+                    // Intentamos separar "1001|Mensaje de error"
+                    var parts = error.ErrorMessage.Split('|');
+
+                    if (parts.Length == 2 && int.TryParse(parts[0], out int parsedCode))
+                    {
+                        return new ErrorResponse(parsedCode, parts[1]);
+                    }
+
+                    // Si no tiene delimitador o falla el parseo
+                    return new ErrorResponse(9999, error.ErrorMessage);
+                }))
+                .ToList();
+
+            return new BadRequestObjectResult(errorList);
+        };
+    });
+
 
 // Añadir el soporte a OpenAPI:  https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
@@ -12,6 +39,7 @@ builder.Services.AddOpenApi();
 // Inyección de la clase de repositorio concreta (Singleton para mantener los datos en memoria)
 builder.Services.AddSingleton<InMemoryActivityTypeRepository>();
 builder.Services.AddSingleton<InMemoryInstructorRepository>();
+builder.Services.AddSingleton<InMemoryActivityRepository>();
 
 // Contruir la aplicacion
 var app = builder.Build();

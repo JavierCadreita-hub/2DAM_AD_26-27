@@ -34,6 +34,12 @@ namespace _4VGymAPI.Models
             Phone = phone;
         }
 
+        public bool isEmpty()
+        {
+            return (string.IsNullOrEmpty(Name) && string.IsNullOrEmpty(Email)
+                && string.IsNullOrEmpty(PhotoUrl) && string.IsNullOrEmpty(Phone));
+        }
+
 
     }
 }

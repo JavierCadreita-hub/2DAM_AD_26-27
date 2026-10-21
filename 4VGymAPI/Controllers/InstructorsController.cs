@@ -64,7 +64,7 @@ namespace _4VGymAPI.Controllers
         [ProducesResponseType(typeof(Instructor), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
-        public ActionResult<Instructor> CreateInstructor([FromBody] InstructorNew instructorNew)
+        public ActionResult<Instructor> CreateInstructor([FromBody] Instructor instructorNew)
         {
             try
             {

@@ -98,7 +98,7 @@ namespace _4VGymAPI.Repositories
                 .Where(instructor => ids.Contains(instructor.Id))
                 .ToList();
         }
-        public Instructor? Add(InstructorNew instructorNew, out ErrorResponse? errorResponse)
+        public Instructor? Add(Instructor instructorNew, out ErrorResponse? errorResponse)
         {
             errorResponse = null;
             // Comprobación de duplicados (Email o Nombre existente, ignorando mayúsculas/minúsculas)

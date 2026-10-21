@@ -5,7 +5,7 @@ namespace _4VGymAPI.Models
     public class ActivityType
     {
         [JsonPropertyName("id")]
-        public long Id { get; set; }
+        public int Id { get; set; }
 
         [JsonPropertyName("name")]
         public string Name { get; set; } = string.Empty;
@@ -16,7 +16,7 @@ namespace _4VGymAPI.Models
         public ActivityType()
         {
         }
-        public ActivityType(long id, string name, int numberMonitors)
+        public ActivityType(int id, string name, int numberMonitors)
         {
             Id = id;
             Name = name;
