@@ -1,21 +1,21 @@
-@_4VGymAPI_HostAddress = http://localhost:5117
+@_4VGymEF_HostAddress = http://localhost:5117
 
-GET {{_4VGymAPI_HostAddress}}/activity-types
+GET {{_4VGymEF_HostAddress}}/activity-types
 Accept: application/json
 
 ###
 
-GET {{_4VGymAPI_HostAddress}}/instructors/2
+GET {{_4VGymEF_HostAddress}}/instructors/2
 Accept: application/json
 
 ###
 
-GET {{_4VGymAPI_HostAddress}}/instructors?first_initial=
+GET {{_4VGymEF_HostAddress}}/instructors?first_initial=
 Accept: application/json
 
 ###
 
-POST {{_4VGymAPI_HostAddress}}/activity-types
+POST {{_4VGymEF_HostAddress}}/activity-types
 Content-Type: application/json
 
 {
@@ -24,14 +24,14 @@ Content-Type: application/json
 }
 
 ### Para hacer un POST de Actividades JSOn Vacio
-POST {{_4VGymAPI_HostAddress}}/activity-types
+POST {{_4VGymEF_HostAddress}}/activity-types
 Content-Type: application/json
 
 {
 }
 
 ### Para hacer un POST de Actividades sin nombre
-POST {{_4VGymAPI_HostAddress}}/activity-types
+POST {{_4VGymEF_HostAddress}}/activity-types
 Content-Type: application/json
 
 {
@@ -39,7 +39,7 @@ Content-Type: application/json
 }
 
 ### Para hacer un POST de Actividades con nombre vacio
-POST {{_4VGymAPI_HostAddress}}/activity-types
+POST {{_4VGymEF_HostAddress}}/activity-types
 Content-Type: application/json
 
 {
@@ -48,7 +48,7 @@ Content-Type: application/json
 }
 
 ### Para hacer un POST de Actividades sin numero de monitores
-POST {{_4VGymAPI_HostAddress}}/activity-types
+POST {{_4VGymEF_HostAddress}}/activity-types
 Content-Type: application/json
 
 {
@@ -56,7 +56,7 @@ Content-Type: application/json
 }
 
 ### Para hacer un POST de Instructors happy path
-POST {{_4VGymAPI_HostAddress}}/instructors
+POST {{_4VGymEF_HostAddress}}/instructors
 Content-Type: application/json
 
 {
@@ -67,7 +67,7 @@ Content-Type: application/json
 }
 
 ### Para hacer un POST de Instructors Telefono incorrecto
-POST {{_4VGymAPI_HostAddress}}/instructors
+POST {{_4VGymEF_HostAddress}}/instructors
 Content-Type: application/json
 
 {
@@ -79,7 +79,7 @@ Content-Type: application/json
 
 
 ### Para hacer un POST de Instructors Email Incorrecto
-POST {{_4VGymAPI_HostAddress}}/instructors
+POST {{_4VGymEF_HostAddress}}/instructors
 Content-Type: application/json
 
 {
@@ -90,7 +90,7 @@ Content-Type: application/json
 }
 
 ### Para hacer un POST de Instructors Telefono obligatorio
-POST {{_4VGymAPI_HostAddress}}/instructors
+POST {{_4VGymEF_HostAddress}}/instructors
 Content-Type: application/json
 
 {
@@ -100,14 +100,14 @@ Content-Type: application/json
 }
 
 ### Para hacer un POST de Instructors nulo
-POST {{_4VGymAPI_HostAddress}}/instructors
+POST {{_4VGymEF_HostAddress}}/instructors
 Content-Type: application/json
 
 {
 }
 
 ### Para hacer un POST de Actividades
-POST {{_4VGymAPI_HostAddress}}/activities
+POST {{_4VGymEF_HostAddress}}/activities
 Content-Type: application/json
 
 {
@@ -119,7 +119,7 @@ Content-Type: application/json
 }
 
 ### Para hacer un POST de Actividades con fecha de inicio incorrecta
-POST {{_4VGymAPI_HostAddress}}/activities
+POST {{_4VGymEF_HostAddress}}/activities
 Content-Type: application/json
 
 {
