@@ -2,7 +2,7 @@
 
 namespace _4VGymEF.Models
 {
-    public class ActivityTypeDto
+    public class ActivityTypeCreateDto
     {
         [JsonPropertyName("id")]
         public int Id { get; set; }
@@ -13,10 +13,10 @@ namespace _4VGymEF.Models
         [JsonPropertyName("number-monitors")]
         public int NumberMonitors { get; set; } = 1;
 
-        public ActivityTypeDto()
+        public ActivityTypeCreateDto()
         {
         }
-        public ActivityTypeDto(int id, string name, int numberMonitors)
+        public ActivityTypeCreateDto(int id, string name, int numberMonitors)
         {
             Id = id;
             Name = name;

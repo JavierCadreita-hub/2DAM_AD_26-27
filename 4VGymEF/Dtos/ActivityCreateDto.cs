@@ -4,7 +4,7 @@ using _4VGymEF.Validations;
 
 namespace _4VGymEF.Models
 {
-    public class ActivityDto
+    public class ActivityCreateDto
     {
         public int Id { get; set; }
 

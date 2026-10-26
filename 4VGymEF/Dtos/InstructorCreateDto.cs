@@ -2,7 +2,7 @@
 
 namespace _4VGymEF.Models
 {
-    public class InstructorDto
+    public class InstructorCreateDto
     {
 
         [JsonPropertyName("id")]
@@ -21,11 +21,11 @@ namespace _4VGymEF.Models
         [JsonPropertyName("phone")]
         public string Phone { get; set; } = string.Empty;
 
-        public InstructorDto()
+        public InstructorCreateDto()
         {
         }
 
-        public InstructorDto(int id, string name, string email, string photoUrl, string phone)
+        public InstructorCreateDto(int id, string name, string email, string photoUrl, string phone)
         {
             Id = id;
             Name = name;
