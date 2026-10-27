@@ -10,6 +10,7 @@ namespace _4VGymEF.Models
 
         [JsonPropertyName("activity_type_id")]
         [Required(ErrorMessage = "30|La tipo de actividad es obligatorio.")]
+
         public int? ActivityTypeId { get; set; }
 
         [JsonPropertyName("instructors_id")]

@@ -10,14 +10,16 @@ namespace _4VGymEF.Models
 
         public int? ActivityTypeId { get; set; }
 
-        // Colección de identificadores de instructores que imparten la actividad. ¿Lo necesitaremos ahora? 
-        public required List<int> InstructorsId { get; set; }
-
         public int MaxParticipants { get; set; }
 
         public DateTime DateStart { get; set; }
 
         public DateTime DateEnd { get; set; }
+
+        public ICollection<Instructor> Instructors = new List<Instructor>();
+        public ActivityType? activityType { get; set; }
+
+
     }
 
 }

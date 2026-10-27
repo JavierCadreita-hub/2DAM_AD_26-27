@@ -1,6 +1,7 @@
 
 using _4VGymEF.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,7 +30,16 @@ builder.Services.AddControllers()
 
             return new BadRequestObjectResult(errorList);
         };
+
+    })
+
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
     });
+    
+
+
 
 
 // Añadir el soporte a OpenAPI:  https://aka.ms/aspnet/openapi

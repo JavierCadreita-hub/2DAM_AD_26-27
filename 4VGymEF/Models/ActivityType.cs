@@ -10,6 +10,8 @@ namespace _4VGymEF.Models
 
         public int NumberMonitors { get; set; } = 1;
 
+        public ICollection<Activity> Activities { get; set; } = new List<Activity>();
+
     }
 
 }
