@@ -1,4 +1,5 @@
 using GrsEFDataBaseFirst.Data;
+using GrsEFDataBaseFirst.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,8 +12,9 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<BdGrsContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("BDGrsConnection")));
 builder.Services.AddControllers();
-
+builder.Services.AddScoped<GrsRepository>();
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
