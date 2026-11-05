@@ -1,6 +1,8 @@
 
+using _4VGymEF.Data;
 using _4VGymEF.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,8 +37,12 @@ builder.Services.AddControllers()
 // Añadir el soporte a OpenAPI:  https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-// Inyección de la clase de repositorio concreta (Singleton para mantener los datos en memoria)
-//builder.Services.AddSingleton<InMemoryActivityTypeRepository>();
+
+// Registro de Entity Framework Core (DbContext)
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");// DefaultConnection: Es el nombre de la cadena de conexión definida en el archivo appsettings.json
+// Registrar el DbContext
+builder.Services.AddDbContext<GymDbContext>(options => options.UseSqlServer(connectionString));
+
 
 // Contruir la aplicacion
 var app = builder.Build();

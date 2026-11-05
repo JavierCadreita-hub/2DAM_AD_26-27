@@ -14,5 +14,8 @@ namespace _4VGymEF.Models
 
         public string Phone { get; set; } = string.Empty;
 
+        //// Relación M:N con Activity
+        public ICollection<Activity> Activities { get; set; } = new List<Activity>();
+
     }
 }

@@ -10,6 +10,13 @@ namespace _4VGymEF.Models
 
         public int NumberMonitors { get; set; } = 1;
 
+        // Propiedad de navegación inversa (1 Tipo de actividad -> Muchas Actividades)
+        [JsonIgnore]
+        public ICollection<Activity> Activities { get; set; } = new List<Activity>();
+
+
+
+
     }
 
 }
